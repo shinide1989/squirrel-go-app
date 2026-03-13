@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'screens/home_screen.dart';
+import 'screens/login_screen.dart';
 
 void main() {
   runApp(const SquirrelApp());
@@ -15,9 +14,10 @@ class SquirrelApp extends StatelessWidget {
       title: '松鼠账本',
       theme: ThemeData(
         primarySwatch: Colors.orange,
+        primaryColor: const Color(0xFFFF6B35),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const LoginScreen(),
     );
   }
 }

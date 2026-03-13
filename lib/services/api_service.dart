@@ -85,3 +85,22 @@ class ApiService {
     }
   }
 }
+
+  Future<bool> register(String username, String password, String email) async {
+    try {
+      final res = await http.post(
+        Uri.parse('$baseUrl/user/register'),
+        headers: await _getHeaders(),
+        body: jsonEncode({'username': username, 'password': password, 'email': email}),
+      );
+      final data = jsonDecode(res.body);
+      if (data['code'] == 200 && data['data'] != null) {
+        await _storage.write(key: 'token', value: data['data']['token']);
+        return true;
+      }
+      return false;
+    } catch (e) {
+      print('注册失败：$e');
+      return false;
+    }
+  }

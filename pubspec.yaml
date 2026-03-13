@@ -33,3 +33,5 @@ flutter:
   
   assets:
     - assets/models/
+  # 权限
+  permission_handler: ^11.1.0
