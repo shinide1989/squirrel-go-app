@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/mascot_logo.dart';
 import 'package:flutter/services.dart';
 import '../services/api_service.dart';
 import '../services/speech_service.dart';
